@@ -64,7 +64,7 @@ $
 \text{event\_time} = \text{year} - \text{event\_year}
 $
 
-**Baseline event window:** $[-3, +5]$
+**Baseline event window:** $[-3, 5]$
 
 ---
 
@@ -83,20 +83,12 @@ This enforces clean comparisons and avoids contamination from nearby policy chan
 
 The main specification is:
 
-$
-y\_{s,t} = \alpha_s + \gamma_t
+$y\_{s,t} = \alpha_s + \gamma_t - \sum\_{k \neq -1} \beta_k\mathbf{1}[\text{event\_time}=k]\cdot\mathbf{1}[\text{treated\_event}]- \varepsilon\_{s,t}$
 
-- \sum\_{k \neq -1} \beta_k
-  \mathbf{1}[\text{event\_time}=k]
-  \cdot
-  \mathbf{1}[\text{treated\_event}]
-- \varepsilon\_{s,t}
-  $
-
-* $\alpha_s$: state fixed effects
-* $\gamma_t$: year fixed effects
-* Reference period: $t = -1$ (year before the increase)
-* Inference: standard errors clustered at the **state level**
+- $\alpha_s$: state fixed effects
+- $\gamma_t$: year fixed effects
+- Reference period: $t = -1$ (year before the increase)
+- Inference: standard errors clustered at the **state level**
 
 ---
 
@@ -104,9 +96,7 @@ y\_{s,t} = \alpha_s + \gamma_t
 
 A joint Wald test is used to assess pre-treatment trends:
 
-$$
-H_0: \beta_{-3} = \beta_{-2} = 0
-$$
+$H_0: \beta_{-3} = \beta_{-2} = 0$
 
 - The null is not rejected at the 5% level
 - The p-value is borderline at 10%
