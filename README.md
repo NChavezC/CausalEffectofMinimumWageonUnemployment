@@ -30,8 +30,6 @@ The results are presented in an **interactive web app** designed as a slide-styl
 All data are obtained programmatically from the  
 **Federal Reserve Economic Data (FRED) API**, ensuring transparency and reproducibility.
 
-Considerable care is taken to construct a clean, analysis-ready state-year panel before estimation.
-
 ---
 
 ## Treatment Definition (Core Design Choice)
@@ -40,15 +38,15 @@ Not all minimum wage changes are treated as events.
 
 A **sharp increase** is defined as:
 
-\[
-\Delta MW\_{s,t} \ge n \cdot \sigma_s
-\]
+$$
+\Delta MW_{s,t} \ge n \cdot \sigma_s
+$$
 
 where:
 
-- \(\Delta MW\_{s,t}\) is the year-over-year change in the minimum wage,
-- \(\sigma*s\) is the state-specific standard deviation of \_positive* historical minimum wage changes,
-- \(n = 1\) in the baseline specification (user-adjustable).
+- $\Delta MW_{s,t}$ is the year-over-year change in the minimum wage
+- $\sigma_s$ is the state-specific standard deviation of **positive** historical minimum wage changes
+- $n = 1$ in the baseline specification (user-adjustable)
 
 Each qualifying increase is treated as a **separate event**, allowing states to contribute multiple events over time.
 
@@ -62,11 +60,13 @@ Each qualifying increase is treated as a **separate event**, allowing states to 
 - Data are stacked around each event within a fixed window
 - Event time is defined as:
 
-\[
-\text{event_time} = \text{year} - \text{event_year}
-\]
+$$
+\text{event\_time} = \text{year} - \text{event\_year}
+$$
 
-**Baseline event window:** \([-3, +5]\)
+**Baseline event window:** $[-3, +5]$
+
+---
 
 ### Clean Controls
 
@@ -83,16 +83,19 @@ This enforces clean comparisons and avoids contamination from nearby policy chan
 
 The main specification is:
 
-\[
-y*{s,t} = \alpha_s + \gamma_t +
-\sum*{k \neq -1} \beta_k \mathbf{1}[\text{event\_time}=k] \cdot \mathbf{1}[\text{treated\_event}]
+$$
+y_{s,t} = \alpha_s + \gamma_t
++ \sum_{k \neq -1} \beta_k
+\mathbf{1}[\text{event\_time}=k]
+\cdot
+\mathbf{1}[\text{treated\_event}]
++ \varepsilon_{s,t}
+$$
 
-- \varepsilon\_{s,t}
-  \]
-
-* **State fixed effects** and **year fixed effects**
-* **Reference period:** \(t = -1\) (year before the increase)
-* **Inference:** Standard errors clustered at the state level
+- $\alpha_s$: state fixed effects
+- $\gamma_t$: year fixed effects
+- Reference period: $t = -1$ (year before the increase)
+- Inference: standard errors clustered at the **state level**
 
 ---
 
@@ -100,9 +103,9 @@ y*{s,t} = \alpha_s + \gamma_t +
 
 A joint Wald test is used to assess pre-treatment trends:
 
-\[
-H*0: \beta*{-3} = \beta\_{-2} = 0
-\]
+$$
+H_0: \beta_{-3} = \beta_{-2} = 0
+$$
 
 - The null is not rejected at the 5% level
 - The p-value is borderline at 10%
@@ -113,10 +116,11 @@ Results are therefore interpreted **conservatively**, and robustness checks are 
 
 ## Summary Effect (ATT)
 
-To provide a scalar summary, the project reports an **Average Treatment Effect on the Treated (ATT)**:
+To provide a scalar summary, the project reports an  
+**Average Treatment Effect on the Treated (ATT)**:
 
-- Defined as the average of post-event coefficients for \(t = 0 \ldots 5\)
-- Relative to \(t = -1\)
+- Defined as the average of post-event coefficients for $t = 0,\dots,5$
+- Relative to $t = -1$
 - Inference via the delta method using clustered variance–covariance estimates
 
 Both dynamic effects and the ATT are reported transparently.
@@ -134,9 +138,9 @@ Both dynamic effects and the ATT are reported transparently.
 
 ## Robustness & Limitations
 
-The project explicitly discusses and (partly) implements robustness checks, including:
+Robustness checks considered or implemented include:
 
-- Alternative definitions of “sharp” increases ($n_sigma$)
+- Alternative definitions of “sharp” increases ($n_\sigma$)
 - Different event windows
 - Clean-control sensitivity
 - Placebo timing checks
@@ -145,7 +149,7 @@ Key limitations:
 
 - Identification is **local**, not global
 - Results apply only to **large, sudden increases**
-- Mechanisms are not identified (reduced hiring vs. participation vs. composition)
+- Mechanisms are not identified (e.g., hiring vs. participation)
 - Unemployment is a high-level outcome
 
 ---
