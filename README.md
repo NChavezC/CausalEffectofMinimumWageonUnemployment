@@ -83,7 +83,7 @@ This enforces clean comparisons and avoids contamination from nearby policy chan
 
 The main specification is:
 
-$y\_{s,t} = \alpha_s + \gamma_t - \sum_{k \neq -1} \beta_k\mathbf{1}[\text{event\_time}=k]\cdot\mathbf{1}[\text{treated\_event}]- \varepsilon\_{s,t}$
+$y_{s,t} = \alpha_s + \gamma_t - \sum_{k \neq -1} \beta_k\mathbf{1}[\text{event\_time}=k]\cdot\mathbf{1}[\text{treated\_event}]- \varepsilon_{s,t}$
 
 - $\alpha_s$: state fixed effects
 - $\gamma_t$: year fixed effects
@@ -96,7 +96,7 @@ $y\_{s,t} = \alpha_s + \gamma_t - \sum_{k \neq -1} \beta_k\mathbf{1}[\text{event
 
 A joint Wald test is used to assess pre-treatment trends:
 
-$H_0: \beta_{-3} = \beta_{-2} = 0$
+$$H_0: \beta_{-3} = \beta_{-2} = 0$$
 
 - The null is not rejected at the 5% level
 - The p-value is borderline at 10%
