@@ -60,9 +60,9 @@ Each qualifying increase is treated as a **separate event**, allowing states to 
 - Data are stacked around each event within a fixed window
 - Event time is defined as:
 
-$$
+$
 \text{event\_time} = \text{year} - \text{event\_year}
-$$
+$
 
 **Baseline event window:** $[-3, +5]$
 
