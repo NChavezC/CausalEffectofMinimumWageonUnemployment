@@ -83,7 +83,7 @@ This enforces clean comparisons and avoids contamination from nearby policy chan
 
 The main specification is:
 
-$y_{s,t} = \alpha_s + \gamma_t - \sum_{k \neq -1} \beta_k\mathbf{1}[\text{event\_time}=k]\cdot\mathbf{1}[\text{treated\_event}]- \varepsilon_{s,t}$
+$$y_{s,t} = \alpha_s + \gamma_t - \sum_{k \neq -1} \beta_k\mathbf{1}[\text{event\_time}=k]\cdot\mathbf{1}[\text{treated\_event}]- \varepsilon_{s,t}$
 
 - $\alpha_s$: state fixed effects
 - $\gamma_t$: year fixed effects
