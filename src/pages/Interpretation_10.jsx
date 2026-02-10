@@ -16,7 +16,7 @@ function Interpretation_10() {
     async function load() {
       try {
         setStatus({ loading: true, error: null });
-        const res = await fetch("../../public/att_summary.json");
+        const res = await fetch("/att_summary.json");
         if (!res.ok)
           throw new Error(
             `Failed to fetch /../../public/att_summary.json (${res.status})`,
