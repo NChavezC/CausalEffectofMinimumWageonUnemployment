@@ -1,0 +1,11 @@
+{
+  "estimand": "ATT = mean post coefficients for event_time in {0,...,5} relative to t=-1",
+  "att": 0.3347,
+  "se_cluster": 0.1378,
+  "p_value": 0.0151,
+  "n_events": 46,
+  "n_states": 51,
+  "n_obs": 11371,
+  "window": [-3, 5],
+  "n_sigma": 3
+}

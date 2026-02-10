@@ -1,0 +1,80 @@
+[
+  {
+    "event_time": -3,
+    "estimate": 0.313,
+    "se": 0.1469,
+    "ci_low": 0.0252,
+    "ci_high": 0.6009,
+    "is_ref": false,
+    "_row": "event_time::-3:treated_event"
+  },
+  {
+    "event_time": -2,
+    "estimate": 0.2133,
+    "se": 0.1391,
+    "ci_low": -0.0594,
+    "ci_high": 0.486,
+    "is_ref": false,
+    "_row": "event_time::-2:treated_event"
+  },
+  {
+    "event_time": -1,
+    "estimate": 0,
+    "is_ref": true,
+    "_row": "...3"
+  },
+  {
+    "event_time": 0,
+    "estimate": 0.195,
+    "se": 0.1471,
+    "ci_low": -0.0932,
+    "ci_high": 0.4833,
+    "is_ref": false,
+    "_row": "event_time::0:treated_event"
+  },
+  {
+    "event_time": 1,
+    "estimate": 0.3745,
+    "se": 0.1718,
+    "ci_low": 0.0378,
+    "ci_high": 0.7112,
+    "is_ref": false,
+    "_row": "event_time::1:treated_event"
+  },
+  {
+    "event_time": 2,
+    "estimate": 0.5581,
+    "se": 0.2114,
+    "ci_low": 0.1439,
+    "ci_high": 0.9724,
+    "is_ref": false,
+    "_row": "event_time::2:treated_event"
+  },
+  {
+    "event_time": 3,
+    "estimate": 0.351,
+    "se": 0.197,
+    "ci_low": -0.0351,
+    "ci_high": 0.7372,
+    "is_ref": false,
+    "_row": "event_time::3:treated_event"
+  },
+  {
+    "event_time": 4,
+    "estimate": 0.3395,
+    "se": 0.1682,
+    "ci_low": 0.0099,
+    "ci_high": 0.6692,
+    "is_ref": false,
+    "_row": "event_time::4:treated_event"
+  },
+  {
+    "event_time": 5,
+    "estimate": 0.1901,
+    "se": 0.1346,
+    "ci_low": -0.0737,
+    "ci_high": 0.4539,
+    "is_ref": false,
+    "_row": "event_time::5:treated_event"
+  }
+]
