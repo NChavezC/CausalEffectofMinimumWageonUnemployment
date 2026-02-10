@@ -39,14 +39,14 @@ Not all minimum wage changes are treated as events.
 A **sharp increase** is defined as:
 
 $$
-\Delta MW_{s,t} \ge n \cdot \sigma_s
+\Delta MW_{s,t} \ge n_{\sigma} \cdot \sigma_s
 $$
 
 where:
 
 - $\Delta MW_{s,t}$ is the year-over-year change in the minimum wage
 - $\sigma_s$ is the state-specific standard deviation of **positive** historical minimum wage changes
-- $n = 1$ in the baseline specification (user-adjustable)
+- $n_{\sigma} = 3$ in the baseline specification (user-adjustable)
 
 Each qualifying increase is treated as a **separate event**, allowing states to contribute multiple events over time.
 
