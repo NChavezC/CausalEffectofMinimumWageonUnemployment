@@ -111,7 +111,7 @@ function Repro_12() {
 
           <div className="space-y-2 text-sm">
             <a
-              href="https://github.com/your-username/your-repo-name"
+              href="https://github.com/NChavezC/CausalEffectofMinimumWageonUnemployment"
               target="_blank"
               rel="noopener noreferrer"
               className="block font-medium text-blue-600 hover:text-blue-800 underline"
@@ -120,7 +120,7 @@ function Repro_12() {
             </a>
 
             <a
-              href="https://github.com/your-username/your-repo-name/blob/main/analysis/stacked_event_study.R"
+              href="https://github.com/NChavezC/CausalEffectofMinimumWageonUnemployment/blob/main/public/UnempATT.R"
               target="_blank"
               rel="noopener noreferrer"
               className="block font-medium text-blue-600 hover:text-blue-800 underline"
